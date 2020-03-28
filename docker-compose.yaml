@@ -2,9 +2,11 @@ version: '3.7'
 
 services:
   flask:
+    environment:
+      - PORT=8081
     build: .
     ports:
-      - 1111:8081
+      - 8081:8081
     depends_on:
       - memcached
   memcached:

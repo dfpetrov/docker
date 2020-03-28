@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  flask:
+    build: .
+    ports:
+      - 1111:8081
+    depends_on:
+      - memcached
+  memcached:
+    image: memcached:latest

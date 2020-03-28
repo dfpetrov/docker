@@ -9,3 +9,5 @@ services:
       - memcached
   memcached:
     image: memcached:latest
+    ports:
+      - 11211:11211

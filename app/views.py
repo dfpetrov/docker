@@ -16,7 +16,7 @@ def json_deserializer(key, value, flags):
 client = Client(('0.0.0.0', 11211), serializer=json_serializer,
                 deserializer=json_deserializer)
 
-cache = client.get('cache')
+cache = client.get('cache1')
 if not cache:
     cache = {'0': 0, '1': 1}
     client.set('cache', cache)

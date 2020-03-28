@@ -5,17 +5,7 @@ services:
     build: .
     ports:
       - 8081:8081
-    depends_on:
-      - memcached
-    environment:
-      - PORT=8081
-    links:
-      - memcached
-    networks:
-      - bridge
   memcached:
     image: memcached:latest
-    networks:
-      - bridge
     ports:
       - "11211:11211"

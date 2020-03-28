@@ -12,10 +12,10 @@ services:
     links:
       - memcached
     networks:
-      - fuckup
+      - bridge
   memcached:
     image: memcached:latest
     networks:
-      - fuckup
+      - bridge
     ports:
       - "11211:11211"

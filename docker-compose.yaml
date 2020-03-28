@@ -11,7 +11,11 @@ services:
       - PORT=8081
     links:
       - memcached
+    networks:
+      - fuckup
   memcached:
     image: memcached:latest
+    networks:
+      - fuckup
     ports:
       - "11211:11211"

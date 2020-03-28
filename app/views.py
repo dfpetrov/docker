@@ -13,10 +13,10 @@ def json_deserializer(key, value, flags):
        return json.loads(value.decode("utf-8"))
    raise Exception("Unknown serialization format")
 
-client = Client(('0.0.0.0', 11211), serializer=json_serializer,
+client = Client(('localhost', 11211), serializer=json_serializer,
                 deserializer=json_deserializer)
 
-cache = client.get('cache1')
+cache = client.get('cache')
 if not cache:
     cache = {'0': 0, '1': 1}
     client.set('cache', cache)
